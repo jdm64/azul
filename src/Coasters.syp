@@ -1,0 +1,28 @@
+
+import "List.syp";
+
+class Pile
+{
+	struct this
+	{
+		[6]int counts;
+	}
+
+
+	[2] draw(Tile type)
+	{
+		[2]List<Tile> ret;
+		
+		return ret;
+	}
+}
+
+class MainBoard
+{
+	struct this
+	{
+		List<Pile> coasters;
+		Pile center;
+	}
+
+}

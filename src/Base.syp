@@ -1,0 +1,11 @@
+
+int rand();
+
+int time(@void t);
+
+int getrandom(@void buff, int len, uint flags);
+
+enum Tile
+{
+	ONE, RED, YELLOW, GREEN, BLUE, MAGENTA
+}

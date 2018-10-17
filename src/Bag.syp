@@ -1,0 +1,49 @@
+
+import "List.syp";
+
+class Bag
+{
+	struct this
+	{
+		[2]List<Tile> bags;
+		int active;
+	}
+
+	this()
+	{
+		reset();
+	}
+
+	void reset()
+	{
+		active = 0;
+		bags[0].clear();
+		bags[1].clear();
+		for (int i = 0; i < 20; i++) {
+			bags[active].add(Tile.RED);
+			bags[active].add(Tile.YELLOW);
+			bags[active].add(Tile.GREEN);
+			bags[active].add(Tile.BLUE);
+			bags[active].add(Tile.MAGENTA);
+		}
+	}
+
+	void shuffle()
+	{
+		bags[active].shuffle();
+	}
+
+	Tile draw()
+	{
+		if (!bags[active].size()) {
+			active ^= 1;
+			shuffle();
+		}
+		return bags[active].pop();
+	}
+
+	void put(Tile tile)
+	{
+		bags[!active].add(tile);
+	}
+}
